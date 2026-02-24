@@ -4,6 +4,36 @@
 
 ---
 
+## 💼 Using Without Microsoft Fabric
+
+If your organisation does not have a Microsoft Fabric SKU or Premium capacity, you can still get great value from this template using **Power BI Pro** or **Premium Per User (PPU)**!
+
+### What changes:
+- ❌ Git Integration (auto-sync between Power BI and GitHub) is **not available**
+- ❌ Deployment Pipelines require PPU or Premium
+- ✅ GitHub still works as your **documentation and version control hub**
+- ✅ All governance, README, and checklist features work exactly the same
+
+### Your workflow (manual):
+1. Build and edit reports in **Power BI Desktop**
+2. Save the `.pbix` file locally
+3. Upload it to the `/reports` folder in GitHub manually via:
+   - [GitHub Desktop](https://desktop.github.com/) — recommended for beginners
+   - The GitHub web UI (drag and drop)
+4. Update the README with report descriptions and architecture
+5. Open the governance checklist issue and work through it
+6. Publish from Power BI Desktop directly to your workspace
+
+### ⚠️ Update your `.gitignore`
+By default, `.pbix` files are excluded from version control (because Fabric users use `.pbip` instead).
+If you are **not** using Fabric Git integration, remove this line from `.gitignore`:
+```
+*.pbix
+```
+This allows your `.pbix` report files to be tracked in GitHub. ✅
+
+---
+
 ## ✅ Start Here: Governance Checklist
 
 This template includes an **optional clickable governance checklist** as a GitHub Issue Template.
@@ -154,5 +184,5 @@ When using Power BI Git integration:
    ```
 2. Fill in all `<placeholder>` fields in this README.
 3. Update `config/workspaces.json` with your workspace IDs.
-4. Connect your Power BI workspace via Git integration.
+4. Connect your Power BI workspace via Git integration (or upload `.pbix` files manually — see top of this file).
 5. Open the governance checklist issue and work through it.
