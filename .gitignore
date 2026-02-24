@@ -1,0 +1,22 @@
+# Power BI - Ignore binary files, track .pbip folder structure instead
+*.pbix
+
+# Power BI - Exclude caches and temp files only
+*.pbix.file/
+.workspace/
+.pbi-cache/
+*.tmp
+
+# Node
+node_modules/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp

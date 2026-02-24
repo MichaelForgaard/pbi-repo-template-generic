@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "workspaceId": "<your-dev-workspace-id>",
+    "workspaceName": "<Project> - Dev"
+  },
+  "test": {
+    "workspaceId": "<your-test-workspace-id>",
+    "workspaceName": "<Project> - Test"
+  },
+  "prod": {
+    "workspaceId": "<your-prod-workspace-id>",
+    "workspaceName": "<Project> - Prod"
+  }
+}

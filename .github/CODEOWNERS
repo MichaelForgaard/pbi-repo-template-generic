@@ -1,0 +1,7 @@
+# Default owners for all files — replace with your GitHub username or team
+* @your-github-username
+
+# Workflow and governance files require extra review
+.github/ @your-github-username
+README.md @your-github-username
+CONTRIBUTING.md @your-github-username

@@ -1,0 +1,125 @@
+name: "Fabric & Power BI Governance Checklist"
+description: "Clickable checklist for scoping, governance, Power BI and Fabric before development, sharing or publishing."
+title: "[Checklist] Fabric & Power BI – "
+labels:
+  - checklist
+  - powerbi
+  - fabric
+  - governance
+  - scoping
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this checklist during the scoping phase and before publishing/sharing Power BI reports or Fabric data products.
+        Check off each item. Note deviations or actions at the bottom.
+
+  - type: checkboxes
+    id: scoping
+    attributes:
+      label: "🧩 Scoping (before development)"
+      options:
+        - label: "Inform stakeholders about the development process."
+        - label: "Identify business needs and requirements."
+        - label: "Define the business case."
+        - label: "Clarify data sources and data access."
+        - label: "Check if similar solutions already exist (reuse before building new)."
+        - label: "Agree on MVP and scope with stakeholders."
+        - label: "Clarify stakeholder commitments (time, ownership, decision makers)."
+        - label: "Create project tracking items (tasks/epics/user stories)."
+        - label: "Clarify whether a Legal Risk Assessment (LRA) is required."
+        - label: "Estimate development time."
+
+  - type: checkboxes
+    id: business_case
+    attributes:
+      label: "💼 Business Value"
+      options:
+        - label: "Ensure Power BI reports and Fabric data products support the defined business case."
+        - label: "Produce insights that help stakeholders make informed decisions."
+
+  - type: checkboxes
+    id: architecture
+    attributes:
+      label: "📐 Data Modelling, Architecture & Data Products"
+      options:
+        - label: "Build Power BI models and Fabric tables/lakehouses according to architecture requirements."
+        - label: "Use approved sources (e.g. OneLake, Delta tables, governed data products)."
+        - label: "Avoid unauthorised shadow data products in Power BI workspaces or Fabric lakehouses."
+
+  - type: checkboxes
+    id: security
+    attributes:
+      label: "🔒 Security & Classification"
+      options:
+        - label: "Classify all content according to your organisation's data classification policy."
+        - label: "Label datasets, Fabric items and documentation with the correct classification."
+        - label: "Never publish restricted/confidential data in areas with incorrect access."
+        - label: "Follow encryption requirements for sensitive data."
+
+  - type: checkboxes
+    id: access
+    attributes:
+      label: "👥 Access & Sharing"
+      options:
+        - label: "Only provide access to people with a genuine need (need-to-know)."
+        - label: "External sharing only with approval and in compliance with contracts/regulations."
+        - label: "Use security groups for Power BI workspaces and Fabric domains/warehouses."
+
+  - type: checkboxes
+    id: datasources
+    attributes:
+      label: "🧭 Data Sources"
+      options:
+        - label: "Use approved and stable data sources."
+        - label: "Use master data and reference data where available."
+        - label: "Avoid local Excel files in models and pipelines."
+
+  - type: checkboxes
+    id: dataquality
+    attributes:
+      label: "📊 Data Quality"
+      options:
+        - label: "Verify that data is correct, complete and up-to-date."
+        - label: "Remove duplicates, errors and outdated data before Power BI consumption."
+        - label: "Report data quality issues to the data owner."
+
+  - type: checkboxes
+    id: metadata
+    attributes:
+      label: "📝 Metadata & Documentation"
+      options:
+        - label: "Document datasets, Fabric tables and reports (definitions, owners, purpose)."
+        - label: "Use meaningful names for tables, columns, measures and pipelines."
+
+  - type: checkboxes
+    id: storage
+    attributes:
+      label: "💾 Storage & Lifecycle"
+      options:
+        - label: "Store data only in approved locations."
+        - label: "Do not store data locally (PBIX, CSV, temp files)."
+        - label: "Follow deletion/archiving requirements for outdated datasets and Fabric artifacts."
+
+  - type: checkboxes
+    id: reuse
+    attributes:
+      label: "📦 Reuse & Data Products"
+      options:
+        - label: "Use governed Fabric data products where possible."
+        - label: "Create semantic models that can be reused by other teams."
+        - label: "Document data product ownership."
+
+  - type: textarea
+    id: comments
+    attributes:
+      label: "Comments / deviations / actions"
+      description: "Describe deviations, risks, actions or what remains before development/publishing/sharing."
+      placeholder: |
+        Example:
+        - Deviation:
+        - Action:
+        - Owner:
+    validations:
+      required: false
