@@ -1,32 +1,48 @@
-# Contributing Guide
+# Contributing
 
-This repository is a Power BI and Microsoft Fabric project connected to Power BI workspaces via Git integration.
+Thank you for contributing to this Power BI and Microsoft Fabric solution repository.
+
+---
+
+## Which Workflow Are You Using?
+
+This repository supports three workflows from the [Power BI, PBIP, GitHub and Fabric Beginner Course](https://github.com/MichaelForgaard/powerbi-fabric-git-beginner-course):
+
+| Workflow | Description |
+|---|---|
+| 📄 Path 1 — No-Template GitHub Setup | Upload `.pbix` files manually via the GitHub web UI or GitHub Desktop |
+| 💻 Path 2 — VS Code + GitHub + PBIP | Edit `.pbip` files locally using VS Code and Git |
+| ☁️ Path 3 — Fabric + GitHub Integration | Changes are synced directly from a Microsoft Fabric workspace |
+
+---
 
 ## Branch Strategy
 
-| Branch | Environment | Power BI Workspace |
-|--------|-------------|-------------------|
-| main   | Production  | Prod workspace    |
-| test   | Test        | Test workspace    |
-| dev    | Development | Dev workspace     |
+| Branch | Purpose |
+|---|---|
+| `main` | Production-ready code |
+| `dev` | Development workspace (linked via Fabric Git integration if applicable) |
+| `test` | Test workspace |
 
-## Working with pbip Files
+Create feature branches from `dev` and open a pull request when your changes are ready to review.
 
-Commit the full pbip folder structure when using Git integration. Do not commit pbix files unless Git integration is not in use. Power BI will automatically sync the workspace when changes are pushed to the linked branch.
+---
 
-## Deployment Pipeline
+## How to Contribute
 
-Use the Power BI Deployment Pipeline to promote content from Dev to Test to Prod. Do not manually publish from Power BI Desktop to the Prod workspace.
+1. Create a branch from `dev` (or `main` for documentation-only changes).
+2. Make your changes in the appropriate folder (`reports/`, `docs/`, etc.).
+3. Update the README if your changes affect report structure, architecture, or access.
+4. Open a pull request with a clear description of what changed and why.
+5. Request a review from the relevant team member.
 
-## Pull Request Process
+---
 
-1. Create a branch from dev for your changes.
-2. Fill in all placeholder fields in README.md before raising a PR.
-3. All changes must go through a Pull Request. No direct pushes to main.
+## What Needs Manual Updates
 
-## Pre-PR Checklist
+Some things are **not** automated by Power BI or Fabric and must be kept up to date manually:
 
-- All placeholder fields in README filled in
-- Architecture diagram added to docs/architecture.png
-- Workspace names and URLs updated
-- Governance checklist issue created and up to date
+- `README.md` — Operational details, report descriptions, architecture
+- `docs/` — Architecture diagrams, screenshots, access matrix
+- `config/workspaces.json` — Workspace IDs and environment references
+- Governance checklist issue — Progress tracking throughout the project

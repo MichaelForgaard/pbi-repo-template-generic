@@ -1,4 +1,6 @@
-# Power BI - Ignore binary files, track .pbip folder structure instead
+# Power BI - File type notes:
+# - Path 2 (VS Code + PBIP) and Path 3 (Fabric) users: keep *.pbix excluded and use .pbip folder structure.
+# - Path 1 (No-Template / manual uploads) users: REMOVE the *.pbix line below to track your report files.
 *.pbix
 
 # Power BI - Exclude caches and temp files only

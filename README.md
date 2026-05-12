@@ -1,6 +1,23 @@
 # <Add Project Name>
 
-**Description:** A template for documenting and managing Power BI and Microsoft Fabric solutions, including operational details, report structure, architecture, governance, and deployment information.
+**Description:** A template for documenting and managing Power BI and Microsoft Fabric solutions.
+
+> 📚 **This template is used as the practical starting point in the [Power BI, PBIP, GitHub and Fabric Beginner Course](https://github.com/MichaelForgaard/powerbi-fabric-git-beginner-course).**
+> If you are following the course, use this template as your working repository.
+
+---
+
+## 🛤️ Which Workflow Are You Using?
+
+This template supports all three workflows from the beginner course. Choose the one that matches your setup:
+
+| Workflow | Description | What to store in `reports/` |
+|---|---|---|
+| 📄 Path 1 — No-Template GitHub Setup | Browser only, no extra tools | Upload `.pbix` files manually |
+| 💻 Path 2 — VS Code + GitHub + PBIP | VS Code + Git, full version history | `.pbip` folder structure |
+| ☁️ Path 3 — Fabric + GitHub Integration | Microsoft Fabric + GitHub | Fabric syncs files automatically |
+
+> 💡 Not sure which to use? See the [Comparison and Recommendation](https://github.com/MichaelForgaard/powerbi-fabric-git-beginner-course/blob/main/learning-path/comparison.md) page in the course.
 
 ---
 
@@ -14,7 +31,7 @@ If your organisation does not have a Microsoft Fabric SKU or Premium capacity, y
 - ✅ GitHub still works as your **documentation and version control hub**
 - ✅ All governance, README, and checklist features work exactly the same
 
-### Your workflow (manual):
+### Your workflow (manual — Path 1):
 1. Build and edit reports in **Power BI Desktop**
 2. Save the `.pbix` file locally
 3. Upload it to the `/reports` folder in GitHub manually via:
@@ -25,8 +42,8 @@ If your organisation does not have a Microsoft Fabric SKU or Premium capacity, y
 6. Publish from Power BI Desktop directly to your workspace
 
 ### ⚠️ Update your `.gitignore`
-By default, `.pbix` files are excluded from version control (because Fabric users use `.pbip` instead).
-If you are **not** using Fabric Git integration, remove this line from `.gitignore`:
+By default, `.pbix` files are excluded from version control (because Path 2 and 3 users use `.pbip` instead).
+If you are using **Path 1** (no Fabric), remove this line from `.gitignore`:
 ```
 *.pbix
 ```
@@ -55,9 +72,11 @@ This template includes an **optional clickable governance checklist** as a GitHu
 ├── .github/               # GitHub configuration (Issue templates)
 │   └── ISSUE_TEMPLATE/    # Clickable issue forms (YAML)
 ├── config/                # Configuration files (workspace IDs etc.)
-├── docs/                  # Documentation (screenshots, architecture diagrams)
-├── reports/               # Power BI report files (.pbix) or PBIP structure
-├── scripts/               # Deployment / automation / CI/CD scripts
+├── docs/                  # Documentation
+│   ├── file-types.md      # Reference: Power BI file types (PBIX, PBIT, PBIP)
+│   └── screenshots/       # Report screenshots
+├── reports/               # Power BI report files (.pbix, .pbit, or .pbip structure)
+│   └── templates/         # Reusable .pbit template files
 └── README.md              # Main documentation
 ```
 
@@ -100,7 +119,7 @@ Mention access control (e.g., security groups) and any relevant notes.
   - <column 1>
   - <column 2>
 
-*(Add screenshots if needed)*
+*(Add screenshots if needed — store them in `docs/screenshots/`)*
 
 ---
 
@@ -133,7 +152,9 @@ Briefly describe your CI/CD approach (e.g., branch strategy, deployment pipeline
 
 # Git Integration and Deployment Pipelines
 
-This repository is connected to a Power BI workspace using **Git integration**. This means:
+This section applies to **Path 3 — Fabric + GitHub Integration**.
+
+When connected, this means:
 
 - Your Power BI workspace is linked to this GitHub repository.
 - Changes made in this repository are automatically synced to the workspace.
@@ -160,7 +181,7 @@ This repository is connected to a Power BI workspace using **Git integration**. 
 
 # Automated vs Manual
 
-When using Power BI Git integration:
+When using Power BI Git integration (Path 3):
 
 ✅ **Automated by Power BI**
 - `.pbip` folder structure for reports and datasets.
@@ -178,11 +199,16 @@ When using Power BI Git integration:
 ---
 
 # Getting Started
-1. Clone the repository:
-   ```bash
-   git clone <repo-url>
-   ```
+1. Clone or use this template to create your repository.
 2. Fill in all `<placeholder>` fields in this README.
-3. Update `config/workspaces.json` with your workspace IDs.
-4. Connect your Power BI workspace via Git integration (or upload `.pbix` files manually — see top of this file).
-5. Open the governance checklist issue and work through it.
+3. Decide which workflow you are using (see **Which Workflow Are You Using?** above).
+4. Update `config/workspaces.json` with your workspace IDs (if applicable).
+5. Add your Power BI files to the `/reports` folder.
+6. Open the governance checklist issue and work through it.
+
+---
+
+## 📁 Reference
+
+- [Power BI File Types: PBIX, PBIT and PBIP](docs/file-types.md)
+- [Beginner Course](https://github.com/MichaelForgaard/powerbi-fabric-git-beginner-course)
