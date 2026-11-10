@@ -87,6 +87,14 @@ This template includes an **optional clickable governance checklist** as a GitHu
 
 ---
 
+## ServiceNow Application (CI / App ID)
+Use the **Business Application** record in ServiceNow. Include these identifiers when documenting the solution or referencing it in a ticket:
+- **Configuration Item (CI):** <Business Application name and ServiceNow link>
+- **CI Number:** <ServiceNow number, e.g. APM...>
+- **App ID:** <ServiceNow App ID>
+
+---
+
 ## Operational Details
 - **Cost / Budget Reference:** <Cost Code or Reference>
 - **Project Mandate:** <Brief note on operational scope>
